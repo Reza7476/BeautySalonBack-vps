@@ -6,6 +6,7 @@ using BeautySalon.RestApi.Configurations.ConnectionStrings;
 using BeautySalon.RestApi.Configurations.Exceptions;
 using BeautySalon.RestApi.Configurations.JwtConfigs;
 using BeautySalon.RestApi.Configurations.SwaggerConfigurations;
+using BeautySalon.RestApi.Configurations.TimeOnlyConvertes;
 using BeautySalon.RestApi.Implementations;
 using BeautySalon.RestApi.Implementations.FireBaseNotification;
 using BeautySalon.RestApi.Implementations.GoogleCeridentials;
@@ -53,7 +54,13 @@ builder.Services.AddSingleton<IGoogleCredentialRootPath>(google =>
 
 builder.Services.AddJwtAuthentication();
 
-builder.Services.AddControllers();
+builder.Services
+    .AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+    });
+
 builder.Services.AddSwaggerConfigGen();
 builder.Services.AddEndpointsApiExplorer();
 

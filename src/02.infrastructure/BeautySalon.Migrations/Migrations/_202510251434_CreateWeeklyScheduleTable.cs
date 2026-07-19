@@ -11,8 +11,8 @@ public class _202510251434_CreateWeeklyScheduleTable : Migration
         Create.Table("WeeklySchedules")
             .WithColumn("Id").AsInt32().PrimaryKey().Identity()
             .WithColumn("DayOfWeek").AsByte()
-            .WithColumn("StartTime").AsDateTime2()
-            .WithColumn("EndTime").AsDateTime2()
+            .WithColumn("StartTime").AsTime()
+            .WithColumn("EndTime").AsTime()
             .WithColumn("IsActive").AsBoolean();
     }
 
