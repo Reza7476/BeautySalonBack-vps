@@ -52,7 +52,6 @@ public class WeeklyScheduleAppService : IWeeklyScheduleService
             throw new ScheduleNotFoundException();
         }
 
-
         if (dto.EndTime < dto.StartTime)
         {
             throw new EndTimeIsLessThanStartTimeException();
