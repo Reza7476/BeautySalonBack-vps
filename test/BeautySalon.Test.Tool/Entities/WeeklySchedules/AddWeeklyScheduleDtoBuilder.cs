@@ -12,19 +12,19 @@ public class AddWeeklyScheduleDtoBuilder
         _dto = new AddWeeklyScheduleDto()
         {
             DayOfWeek = DayWeek.Saturday,
-            StartTime = DateTime.Now,
-            EndTime = DateTime.Now.AddHours(8),
+            StartTime =new TimeOnly(8,1),
+            EndTime = new TimeOnly(10,30),
             IsActive = false
         };
     }
 
-    public AddWeeklyScheduleDtoBuilder WithStartTime(DateTime time)
+    public AddWeeklyScheduleDtoBuilder WithStartTime(TimeOnly time)
     {
         _dto.StartTime = time;
         return this;
     }
 
-    public AddWeeklyScheduleDtoBuilder WithEndTime(DateTime time)
+    public AddWeeklyScheduleDtoBuilder WithEndTime(TimeOnly time)
     {
         _dto.EndTime = time;
         return this;

@@ -10,9 +10,9 @@ public class EditWeeklyScheduleDtoBuilder
         _dto = new EditWeeklyScheduleDto()
         {
             DayOfWeek = DayWeek.Monday,
-            EndTime = DateTime.Now.AddHours(8),
+            StartTime = new TimeOnly(8,10),
+            EndTime = new TimeOnly(10,1),
             IsActive = true,
-            StartTime = DateTime.Now,
         };
     }
 
@@ -22,13 +22,13 @@ public class EditWeeklyScheduleDtoBuilder
         return this;
     }
 
-    public EditWeeklyScheduleDtoBuilder WithStartTime(DateTime time)
+    public EditWeeklyScheduleDtoBuilder WithStartTime(TimeOnly time)
     {
         _dto.StartTime = time;
         return this;
     }
 
-    public EditWeeklyScheduleDtoBuilder WithEndTime(DateTime time)
+    public EditWeeklyScheduleDtoBuilder WithEndTime(TimeOnly time)
     {
         _dto.EndTime = time;
         return this;

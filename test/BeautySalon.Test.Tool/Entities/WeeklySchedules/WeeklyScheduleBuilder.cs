@@ -11,8 +11,8 @@ public class WeeklyScheduleBuilder
         {
             DayOfWeek = DayWeek.Tuesday,
             IsActive = true,
-            StartTime = DateTime.UtcNow,
-            EndTime = DateTime.UtcNow.AddHours(8),
+            StartTime = new TimeOnly(8,1),
+            EndTime = new TimeOnly(10,1),
         };
     }
 
@@ -22,13 +22,13 @@ public class WeeklyScheduleBuilder
         return this;
     }
 
-    public WeeklyScheduleBuilder WithStartTime(DateTime time)
+    public WeeklyScheduleBuilder WithStartTime(TimeOnly time)
     {
         _schedule.StartTime = time;
         return this;
     }
 
-    public WeeklyScheduleBuilder WithEndTime(DateTime time)
+    public WeeklyScheduleBuilder WithEndTime(TimeOnly time)
     {
         _schedule.EndTime = time;
         return this;
