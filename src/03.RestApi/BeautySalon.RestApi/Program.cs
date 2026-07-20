@@ -55,11 +55,11 @@ builder.Services.AddSingleton<IGoogleCredentialRootPath>(google =>
 builder.Services.AddJwtAuthentication();
 
 builder.Services
-    .AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
-    });
+    .AddControllers();
+    //.AddJsonOptions(options =>
+    //{
+    //    options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+    //});
 
 builder.Services.AddSwaggerConfigGen();
 builder.Services.AddEndpointsApiExplorer();
