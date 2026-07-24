@@ -9,7 +9,7 @@ public class _202511181019_CreateAppointmentReviewTable : Migration
     public override void Up()
     {
         Create.Table("AppointmentReviews")
-            .WithColumn("id").AsString().NotNullable().PrimaryKey()
+            .WithColumn("Id").AsString().NotNullable().PrimaryKey()
             .WithColumn("AppointmentId").AsString().NotNullable()
             .WithColumn("ClientId").AsString().NotNullable()
             .WithColumn("TechnicianId").AsString().NotNullable()

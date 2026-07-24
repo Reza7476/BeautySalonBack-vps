@@ -19,7 +19,7 @@ public static class DataMigration
         EnsureDatabaseExistPostgres(connectionString);
         var runner = CreateRunner(connectionString);
         runner.MigrateUp();
-        //runner.MigrateDown(202510182006); 
+       // runner.MigrateDown(202510271730); 
     }
 
     private static void EnsureDatabaseExist(string connectionString)
